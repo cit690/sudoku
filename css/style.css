@@ -1,5 +1,5 @@
 html {
-  box-sizing: border-box
+  box-sizing: border-box;
 }
 
 /* The Universal Selector */
@@ -18,23 +18,54 @@ html {
 }
 
 body {
+  display:flex;
+  align-items: center;
+  justify-content: center;
   color: #253237;
   background-color: #e0fbfc;
-  /* Use a system font, if none are available use an available sans-sarif font */
   font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
         Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
   margin: 0;
 }
+h1{
+
+}
+
+main{
+  margin: 0;
+}
+
+.level {
+  background-color: #c2dfe3;
+  border: 0;
+}
+
+.pause {
+  background-color: #c2dfe3;
+  border: 0;
+}
 
 .board {
+  margin: 0;
   width: 453px;
   display: grid;
   grid-template-columns: 50px 50px 50px 50px 50px 50px 50px 50px 50px;
   grid-template-rows: 50px 50px 50px 50px 50px 50px 50px 50px 50px;
-  border: 1.5px solid #253237
+  border: 1.5px solid #253237;
 }
 
 .tile {
+  border: 1px solid #5c6b73;
+}
+ 
+.number-select {
+  display: grid;
+  grid-template-columns: 33% 33% 33%;
+  
+}
+
+.select {
+  background-color: #c2dfe3;
   border: 1px solid #5c6b73;
 }
 

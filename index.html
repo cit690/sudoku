@@ -17,105 +17,31 @@
 </head>
 <body>
   <h1>SUDOKU</h1>
-  <button class="btn btn-primary">EASY</button>
-  <button class="btn btn-warning">MEDIUM</button>
-  <button class="btn btn-danger">HARD</button>
+  <h3>
+    <button class="level" id="easy">EASY</button>
+    <button class="level" id="medium">MEDIUM</button>
+    <button class="level" id="hard">HARD</button>
+  </h3>
+  <h4>
+    <button class="pause">||</button>
+    00:00
+  </h4>
 
   <main>
-    <div class="board">
-  
-        <div class="tile" id="01"></div>
-        <div class="tile" id="02"></div>
-        <div class="tile" id="03"></div>
-        <div class="tile" id="04"></div>
-        <div class="tile" id="05"></div>
-        <div class="tile" id="06"></div>
-        <div class="tile" id="07"></div>
-        <div class="tile" id="08"></div>
-        <div class="tile" id="09"></div>
-
-        <div class="tile" id="01"></div>
-        <div class="tile" id="01"></div>
-        <div class="tile" id="01"></div>
-        <div class="tile" id="01"></div>
-        <div class="tile" id="01"></div>
-        <div class="tile" id="01"></div>
-        <div class="tile" id="01"></div>
-        <div class="tile" id="01"></div>
-        <div class="tile" id="01"></div>
-    
-        <div class="tile" id="01"></div>
-        <div class="tile" id="01"></div>
-        <div class="tile" id="01"></div>
-        <div class="tile" id="01"></div>
-        <div class="tile" id="01"></div>
-        <div class="tile" id="01"></div>
-        <div class="tile" id="01"></div>
-        <div class="tile" id="01"></div>
-        <div class="tile" id="01"></div>
-    
-        <div class="tile" id="01"></div>
-        <div class="tile" id="01"></div>
-        <div class="tile" id="01"></div>
-        <div class="tile" id="01"></div>
-        <div class="tile" id="01"></div>
-        <div class="tile" id="01"></div>
-        <div class="tile" id="01"></div>
-        <div class="tile" id="01"></div>
-        <div class="tile" id="01"></div>
-    
-        <div class="tile" id="01"></div>
-        <div class="tile" id="01"></div>
-        <div class="tile" id="01"></div>
-        <div class="tile" id="01"></div>
-        <div class="tile" id="01"></div>
-        <div class="tile" id="01"></div>
-        <div class="tile" id="01"></div>
-        <div class="tile" id="01"></div>
-        <div class="tile" id="01"></div>
-   
-        <div class="tile" id="01"></div>
-        <div class="tile" id="01"></div>
-        <div class="tile" id="01"></div>
-        <div class="tile" id="01"></div>
-        <div class="tile" id="01"></div>
-        <div class="tile" id="01"></div>
-        <div class="tile" id="01"></div>
-        <div class="tile" id="01"></div>
-        <div class="tile" id="01"></div>
-    
-        <div class="tile" id="01"></div>
-        <div class="tile" id="01"></div>
-        <div class="tile" id="01"></div>
-        <div class="tile" id="01"></div>
-        <div class="tile" id="01"></div>
-        <div class="tile" id="01"></div>
-        <div class="tile" id="01"></div>
-        <div class="tile" id="01"></div>
-        <div class="tile" id="01"></div>
-
-        <div class="tile" id="01"></div>
-        <div class="tile" id="01"></div>
-        <div class="tile" id="01"></div>
-        <div class="tile" id="01"></div>
-        <div class="tile" id="01"></div>
-        <div class="tile" id="01"></div>
-        <div class="tile" id="01"></div>
-        <div class="tile" id="01"></div>
-        <div class="tile" id="01"></div>
-  
-        <div class="tile" id="01"></div>
-        <div class="tile" id="01"></div>
-        <div class="tile" id="01"></div>
-        <div class="tile" id="01"></div>
-        <div class="tile" id="01"></div>
-        <div class="tile" id="01"></div>
-        <div class="tile" id="01"></div>
-        <div class="tile" id="01"></div>
-        <div class="tile" id="01"></div>
-
-
-    </div>
+    <div class="board"></div>
   </main>
+
+  <section class="number-select">
+    <button class="select" id="b1">1</button>
+    <button class="select" id="b2">2</button>
+    <button class="select" id="b3">3</button>
+    <button class="select" id="b4">4</button>
+    <button class="select" id="b5">5</button>
+    <button class="select" id="b6">6</button>
+    <button class="select" id="b7">7</button>
+    <button class="select" id="b8">8</button>
+    <button class="select" id="b9">9</button>
+    <button class="erase" id="erase">X</button>
+  </section>
 </body>
 </html>
