@@ -36,7 +36,7 @@ const columnsArray = [
 ]
 
 const allSolutions = boxArray.concat(rowsArray, columnsArray)
-console.log(allSolutions)
+
 
 /*-------------------------------- Variables --------------------------------*/
 
@@ -60,36 +60,58 @@ console.log(numberSelect)
 
 
 /*----------------------------- Event Listeners -----------------------------*/
-// document.querySelector('.playerBoard').addEventListener('click', handleClick)
+document.querySelector('.playerBoard').addEventListener('click', handleClick)
 
-// function handleClick(evt){
+function handleClick(evt){
   
+}
+
+// document.querySelector('.select').addEventListener('click', storeValue)
+
+// function storeValue(evt){
+//   let input = parseInt(evt.getAttribute('value'))
+  
+//   console.log('work dammit')
 // }
+
+numberSelect.onclick = () => {
+  console.log('work dammit')
+}
 
 /*-------------------------------- Functions --------------------------------*/
 
 
 
 function init(){
-  blankBoard = [
-    [null, null, null, null, null, null, null, null, null],
-    [null, null, null, null, null, null, null, null, null],
-    [null, null, null, null, null, null, null, null, null],
-    [null, null, null, null, null, null, null, null, null],
-    [null, null, null, null, null, null, null, null, null],
-    [null, null, null, null, null, null, null, null, null],
-    [null, null, null, null, null, null, null, null, null],
-    [null, null, null, null, null, null, null, null, null],
-    [null, null, null, null, null, null, null, null, null]
-  ]
-console.log(blankBoard)
+  blankBoard = [],
+  possibleValues = [1, 2, 3, 4, 5, 6, 7, 8, 9]
+
 }
 init()
 
-//I want the board within each array to accept 1 interger between 1 and 9, without any of the intergers repeating.
+//I want the board within each array to accept 1 integer between 1 and 9, without any of the integers repeating.
 
 // function renderArrays(){
-//   for (let i = 0; i <= 8; i++) {
-//     if 
+//   for (let i = 0; i <= possibleValues.length; i++) {
+//     const a = allSolutions[i][0]
+//     const b = allSolutions[i][1]
+//     const c = allSolutions[i][2]
+//     const d = allSolutions[i][3]
+//     const e = allSolutions[i][4]
+//     const f = allSolutions[i][5]
+//     const g = allSolutions[i][6]
+//     const h = allSolutions[i][7]
+//     const k = allSolutions[i][8]
 //   }
 // }
+
+
+    // [null, null, null, null, null, null, null, null, null],
+    // [null, null, null, null, null, null, null, null, null],
+    // [null, null, null, null, null, null, null, null, null],
+    // [null, null, null, null, null, null, null, null, null],
+    // [null, null, null, null, null, null, null, null, null],
+    // [null, null, null, null, null, null, null, null, null],
+    // [null, null, null, null, null, null, null, null, null],
+    // [null, null, null, null, null, null, null, null, null],
+    // [null, null, null, null, null, null, null, null, null]
