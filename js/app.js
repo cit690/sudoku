@@ -10,7 +10,6 @@ const boxArray = [
   [58, 59, 60, 67, 68, 69, 76, 77, 78],
   [61, 62, 63, 70, 71, 72, 79, 80, 81],
 ]
-console.log(boxArray)
 
 const rowsArray = [
   [1, 2, 3, 4, 5, 6, 7, 8, 9],
@@ -36,12 +35,13 @@ const columnsArray = [
   [9, 18, 27, 36, 45, 54, 63, 72, 81],
 ]
 
+const allSolutions = boxArray.concat(rowsArray, columnsArray)
+console.log(allSolutions)
 
 /*-------------------------------- Variables --------------------------------*/
 
 let player
 let time
-let
 
 /*------------------------ Cached Element References ------------------------*/
 const playerBoard = document.querySelector(".board")
