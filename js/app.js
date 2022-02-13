@@ -44,7 +44,7 @@ let player
 let time
 
 /*------------------------ Cached Element References ------------------------*/
-const playerBoard = document.querySelector(".board")
+const playerBoard = document.querySelector('.board')
 console.log(playerBoard)
 for(let i=1; i<=81; i++) {
   const newDiv = document.createElement('div')
@@ -53,30 +53,33 @@ for(let i=1; i<=81; i++) {
   playerBoard.appendChild(newDiv)
 }
 
+
 const tile = document.querySelectorAll('.tile')
 
-const numberSelect = document.querySelectorAll('.select')
-console.log(numberSelect)
+const numberSelectEl = document.querySelector('.number-select')
 
+const numBtnEls = document.querySelectorAll('.select')
+console.log(numBtnEls)
 
 /*----------------------------- Event Listeners -----------------------------*/
-document.querySelector('.playerBoard').addEventListener('click', handleClick)
+//I want a to be able to click on a tile, have that tile listen for a click from one of the number buttons, and have the value of the number button be displayed on the selected tile.
 
-function handleClick(evt){
-  
-}
 
-// document.querySelector('.select').addEventListener('click', storeValue)
+numberSelectEl.addEventListener('click', function(evt){
+  let input = evt.target.value
+  console.log(input)
+  tile.textContent = input
+})
 
-// function storeValue(evt){
-//   let input = parseInt(evt.getAttribute('value'))
-  
-//   console.log('work dammit')
-// }
+playerBoard.addEventListener('click', function(evt){
+  let choice = evt.target.id.replace('sq', '')
+  choice = this.input
+})
 
-numberSelect.onclick = () => {
-  console.log('work dammit')
-}
+
+
+
+
 
 /*-------------------------------- Functions --------------------------------*/
 
@@ -85,10 +88,22 @@ numberSelect.onclick = () => {
 function init(){
   blankBoard = [],
   possibleValues = [1, 2, 3, 4, 5, 6, 7, 8, 9]
+  player = 1
 
+  render()
 }
 init()
 
+
+function render(){
+  // possibleValues.forEach((value, i)=>{
+  //   if (value === null){
+  //     tile[i].textContent = 
+  //   }
+  // })
+
+  
+}
 //I want the board within each array to accept 1 integer between 1 and 9, without any of the integers repeating.
 
 // function renderArrays(){
