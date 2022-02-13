@@ -49,12 +49,13 @@ console.log(playerBoard)
 for(let i=1; i<=81; i++) {
   const newDiv = document.createElement('div')
   newDiv.className = 'tile'
-  newDiv.id = i
+  newDiv.id = 'sq' + i
   playerBoard.appendChild(newDiv)
 }
 
 
 const tile = document.querySelectorAll('.tile')
+console.log(tile)
 
 const numberSelectEl = document.querySelector('.number-select')
 
@@ -65,17 +66,24 @@ console.log(numBtnEls)
 //I want a to be able to click on a tile, have that tile listen for a click from one of the number buttons, and have the value of the number button be displayed on the selected tile.
 
 
-numberSelectEl.addEventListener('click', function(evt){
-  let input = evt.target.value
-  console.log(input)
-  tile.textContent = input
-})
 
 playerBoard.addEventListener('click', function(evt){
-  let choice = evt.target.id.replace('sq', '')
-  choice = this.input
-})
+  let choice = parseInt(evt.target.id.replace('sq', ''))
+  console.log(choice)
+  
 
+  numberSelectEl.addEventListener('click', function(inp){
+    let input = inp.target.value
+    console.log(input)
+    evt.target.textContent = input
+  })
+  // I need the input to not remain the assigned value after I select a new tile
+//  if (input === ){
+//    return
+
+//  }
+})
+init()
 
 
 
@@ -96,12 +104,10 @@ init()
 
 
 function render(){
-  // possibleValues.forEach((value, i)=>{
-  //   if (value === null){
-  //     tile[i].textContent = 
-  //   }
-  // })
-
+  
+  // if(playerBoard === 'clicked'){
+  //   tile.style.backgroundColor= '#9db4c0'
+  // }
   
 }
 //I want the board within each array to accept 1 integer between 1 and 9, without any of the integers repeating.
