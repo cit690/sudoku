@@ -72,18 +72,18 @@ playerBoard.addEventListener('click', function(evt){
   console.log(choice)
   
 
-  numberSelectEl.addEventListener('click', function(inp){
+  numberSelectEl.addEventListener('click', storeValue) 
+  function storeValue(inp){
     let input = inp.target.value
     console.log(input)
     evt.target.textContent = input
-  })
-  // I need the input to not remain the assigned value after I select a new tile
-//  if (input === ){
-//    return
+    numberSelectEl.removeEventListener('click', storeValue)
+  }
 
-//  }
 })
-init()
+
+
+  // I need the input to remain the assigned value after I select a new tile, without changing to the newest assigned value.
 
 
 
@@ -98,18 +98,16 @@ function init(){
   possibleValues = [1, 2, 3, 4, 5, 6, 7, 8, 9]
   player = 1
 
-  render()
+  
 }
 init()
 
 
-function render(){
+// function render(){
   
-  // if(playerBoard === 'clicked'){
-  //   tile.style.backgroundColor= '#9db4c0'
-  // }
   
-}
+  
+// }
 //I want the board within each array to accept 1 integer between 1 and 9, without any of the integers repeating.
 
 // function renderArrays(){
