@@ -72,24 +72,23 @@ const numBtnEls = document.querySelectorAll('.select')
 playerBoard.addEventListener('click', function(evt){
   let choice = evt.target.id.replace('sq', '')
   evt.target.style.backgroundColor = 'yellow'
-  
-  numberSelectEl.addEventListener('click', (e) => storeValue(e, choice)) 
-  
   // evalNum()
-  console.log(blankBoard)
+  numberSelectEl.addEventListener('click', storeValue) 
+  function storeValue(e){
+    let input = e.target.value
+    blankBoard[choice] = input
+    // evt.target.textContent = input
+    // evt.target.style.backgroundColor = '#C2DFE3'
+    numberSelectEl.removeEventListener('click', storeValue)
+    console.log(blankBoard)
+    render()
+  }
 })
 
+
+
 /*-------------------------------- Functions --------------------------------*/
-function storeValue(evt, choice){
-  console.log(choice, 'choice')
-  let input = evt.target.value
-  blankBoard[choice] = input
-  // evt.target.textContent = input
-  // evt.target.style.backgroundColor = '#C2DFE3'
-  numberSelectEl.removeEventListener('click', storeValue)
-  console.log(blankBoard)
-  render()
-}
+
 
 
 function init(){
@@ -106,10 +105,10 @@ init()
 
 function render(){
   blankBoard.forEach((space, i) =>{
-    console.log(space)
    if(space !== null){
      console.log(tile[i])
     tile[i].textContent = space
+    tile[i].style.backgroundColor = '#C2DFE3'
    }
   })
 }
