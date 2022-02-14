@@ -78,9 +78,9 @@ function handClick(evt){
     let input = e.target.value
     blankBoard[choice] = input
     numberSelectEl.removeEventListener('click', storeValue)
-    
+    console.log(blankBoard)
     // evalNum()
-    checkRow()
+    render()
     // renderArrays()
   }
 }
@@ -101,9 +101,10 @@ function init(){
     null, null, null, 5, null, null, 1, null, 2, 
     null, null, null, 8, 4, 2, 9, null, 3, 
     5, 9, 2, 3, 7, 1, 4, 8, 6],
-  possibleValues = [1, 2, 3, 4, 5, 6, 7, 8, 9]
-  player = 1
-  click = 0
+    console.log(blankBoard)
+  possibleValues = [1, 2, 3, 4, 5, 6, 7, 8, 9],
+  player = 1,
+  click = 0,
   win = null
 
   render()
@@ -164,7 +165,7 @@ init()
 
 
 
-// const completeBoard = 
+// const incompleteBoard = 
 // [2, 3, null, 4, 1, 5, null, 6, 8, 
 //   null, 8, null, 2, 3, 6, 5, 1, 9, 
 //   1, 6, null, 9, 8, 7, 2, 3, 4, 
@@ -175,13 +176,9 @@ init()
 //   null, null, null, 8, 4, 2, 9, null, 3, 
 //   5, 9, 2, 3, 7, 1, 4, 8, 6 ]
 
-//   const completeBoard = 
-// [2, 3, 0, 4, 1, 5, 0, 6, 8, 
-//   0, 8, 0, 2, 3, 6, 5, 1, 9, 
-//   1, 6, 0, 9, 8, 7, 2, 3, 4, 
-//   3, 1, 7, 0, 9, 4, 0, 2, 5, 
-//   4, 5, 8, 1, 2, 0, 6, 9, 7, 
-//   9, 2, 6, 0, 5, 8, 3, 0, 1, 
-//   0, 0, 0, 5, 0, 0, 1, 0, 2, 
-//   0, 0, 0, 8, 4, 2, 9, 0, 3, 
-//   5, 9, 2, 3, 7, 1, 4, 8, 6 ]
+  const completeBoard = 
+[2, 3, 9, 4, 1, 5, 7, 6, 8, 7, 8, 4, 2, 3, 6, 5, 1, 9, 1, 6, 5, 9, 8, 7, 2, 3, 4, 3, 1, 7, 6, 9, 4, 8, 2, 5, 4, 5, 8, 1, 2, 3, 6, 9, 7, 9, 2, 6, 7, 5, 8, 3, 4, 1, 8, 4, 3, 5, 6, 9, 1, 7, 2, 6, 7, 1, 8, 4, 2, 9, 5, 3, 5, 9, 2, 3, 7, 1, 4, 8, 6 ]
+
+
+
+  // blankBoard = [null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null],
