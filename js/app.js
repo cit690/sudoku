@@ -49,7 +49,6 @@ let selectedNums
 
 /*------------------------ Cached Element References ------------------------*/
 const playerBoard = document.querySelector('.board')
-console.log(playerBoard)
 
 for(let i=0; i<=80; i++) {
   const newDiv = document.createElement('div')
@@ -61,7 +60,6 @@ for(let i=0; i<=80; i++) {
 
 const tile = document.querySelectorAll('.tile')
 
-console.log(tile)
 
 const numberSelectEl = document.querySelector('.number-select')
 
@@ -69,21 +67,23 @@ const numBtnEls = document.querySelectorAll('.select')
 
 /*----------------------------- Event Listeners -----------------------------*/
 
-playerBoard.addEventListener('click', function(evt){
-  let choice = evt.target.id.replace('sq', '')
+playerBoard.addEventListener('click', handClick)
+
+function handClick(evt){
+  let choice = parseInt(evt.target.id.replace('sq', ''))
   evt.target.style.backgroundColor = 'yellow'
-  // evalNum()
+ 
   numberSelectEl.addEventListener('click', storeValue) 
   function storeValue(e){
     let input = e.target.value
     blankBoard[choice] = input
-    // evt.target.textContent = input
-    // evt.target.style.backgroundColor = '#C2DFE3'
     numberSelectEl.removeEventListener('click', storeValue)
-    console.log(blankBoard)
-    render()
+    
+    // evalNum()
+    checkRow()
+    // renderArrays()
   }
-})
+}
 
 
 
@@ -92,8 +92,15 @@ playerBoard.addEventListener('click', function(evt){
 
 
 function init(){
-  blankBoard = [null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null],
-  console.log(blankBoard)
+  blankBoard = [2, 3, null, 4, 1, 5, null, 6, 8, 
+    null, 8, null, 2, 3, 6, 5, 1, 9, 
+    1, 6, null, 9, 8, 7, 2, 3, 4, 
+    3, 1, 7, null, 9, 4, null, 2, 5, 
+    4, 5, 8, 1, 2, null, 6, 9, 7, 
+    9, 2, 6, null, 5, 8, 3, null, 1, 
+    null, null, null, 5, null, null, 1, null, 2, 
+    null, null, null, 8, 4, 2, 9, null, 3, 
+    5, 9, 2, 3, 7, 1, 4, 8, 6],
   possibleValues = [1, 2, 3, 4, 5, 6, 7, 8, 9]
   player = 1
   click = 0
@@ -106,7 +113,6 @@ init()
 function render(){
   blankBoard.forEach((space, i) =>{
    if(space !== null){
-     console.log(tile[i])
     tile[i].textContent = space
     tile[i].style.backgroundColor = '#C2DFE3'
    }
@@ -115,47 +121,67 @@ function render(){
 
 
 // function renderArrays(){
-  // for (let i = 0; i <= possibleValues.length; i++) {
-    // const a = rowsArray[i][0]
-    // const b = rowsArray[i][1]
-    // const c = rowsArray[i][2]
-    // const d = rowsArray[i][3]
-    // const e = rowsArray[i][4]
-    // const f = rowsArray[i][5]
-    // const g = rowsArray[i][6]
-    // const h = rowsArray[i][7]
-    // const j = rowsArray[i][8]
+//   for (let i = 0; i < rowsArray.length; i++) {
+//     const a = rowsArray[i][0]
+//     const b = rowsArray[i][1]
+//     const c = rowsArray[i][2]
+//     const d = rowsArray[i][3]
+//     const e = rowsArray[i][4]
+//     const f = rowsArray[i][5]
+//     const g = rowsArray[i][6]
+//     const h = rowsArray[i][7]
+//     const j = rowsArray[i][8]
 
-    // if(playerBoard[a]+playerBoard[b]+playerBoard[c]+playerBoard[d]+playerBoard[e]+playerBoard[f]+playerBoard[g]+playerBoard[h]+playerBoard[j] === true){
-    //   console.log('win')
-    // }
+//     if(blankBoard[a]+blankBoard[b]+blankBoard[c]+blankBoard[d]+blankBoard[e]+playerBoard[f]+blankBoard[g]+blankBoard[h]+blankBoard[j] === 9){
+//       console.log('win')
+//     }
 
-  // }
+//   }
+//   render()
 // }
 
 function evalNum()  {
-  checkIfNumIsAlreadyInRow()
+  checkRow()
   checkIfNumIsAlreadyInColumn()
   checkIfNumIsAlreadyInGrid()
+}
   //a function that will allow me to see if the row/column/grid already contains a number from 1-9. 
 
-//if 1-9 appears only once in each row/column/grid, return a success message. Else, return an error message
+//if 1-9 appears only once in each row/column/grid, return a success message. Else if, a number repeats, return an error message. Else, return null
 
-function checkIfNumIsAlreadyInRow() {
-  possibleValues.forEach((num, i) => {
-    if(rowsArray[i].includes(num)){
-     
-    }
-  
-  })
+function checkRow() {}
+ 
 
-}
 
 function checkIfNumIsAlreadyInColumn() {
 
 }
 function checkIfNumIsAlreadyInGrid() {
 
+}
 render()
-}
-}
+init()
+
+
+
+// const completeBoard = 
+// [2, 3, null, 4, 1, 5, null, 6, 8, 
+//   null, 8, null, 2, 3, 6, 5, 1, 9, 
+//   1, 6, null, 9, 8, 7, 2, 3, 4, 
+//   3, 1, 7, null, 9, 4, null, 2, 5, 
+//   4, 5, 8, 1, 2, null, 6, 9, 7, 
+//   9, 2, 6, null, 5, 8, 3, null, 1, 
+//   null, null, null, 5, null, null, 1, null, 2, 
+//   null, null, null, 8, 4, 2, 9, null, 3, 
+//   5, 9, 2, 3, 7, 1, 4, 8, 6 ]
+
+//   const completeBoard = 
+// [2, 3, 0, 4, 1, 5, 0, 6, 8, 
+//   0, 8, 0, 2, 3, 6, 5, 1, 9, 
+//   1, 6, 0, 9, 8, 7, 2, 3, 4, 
+//   3, 1, 7, 0, 9, 4, 0, 2, 5, 
+//   4, 5, 8, 1, 2, 0, 6, 9, 7, 
+//   9, 2, 6, 0, 5, 8, 3, 0, 1, 
+//   0, 0, 0, 5, 0, 0, 1, 0, 2, 
+//   0, 0, 0, 8, 4, 2, 9, 0, 3, 
+//   5, 9, 2, 3, 7, 1, 4, 8, 6 ]
