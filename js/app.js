@@ -1,4 +1,6 @@
 /*-------------------------------- Constants --------------------------------*/
+
+
 const boxArray = [
   [0, 1, 2, 9, 10, 11, 18, 19, 20],
   [3, 4, 5, 12, 13, 14, 21, 22, 23],
@@ -92,7 +94,10 @@ function init(){
 init()
 
 function render(){
-
+  blankBoard.forEach((num, i) =>{
+   
+    tile[i].style.backgroundColor = '#C2DFE3'
+  })
 }
 
 
@@ -124,12 +129,11 @@ function evalNum()  {
 //if 1-9 appears only once in each row/column/grid, return a success message. Else, return an error message
 
 function checkIfNumIsAlreadyInRow() {
-  poop = []
   possibleValues.forEach((num, i) => {
     if(rowsArray[i].includes(num)){
-     poop.push(possibleValues[i])
+     console.log('dsklfja')
     }
-    console.log(poop)
+  
   })
 
 }
