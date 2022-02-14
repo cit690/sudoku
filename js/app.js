@@ -41,13 +41,15 @@ const columnsArray = [
 
 
 /*-------------------------------- Variables --------------------------------*/
-
+let blankBoard
 let player
 let time
 let click
+let selectedNums 
 
 /*------------------------ Cached Element References ------------------------*/
 const playerBoard = document.querySelector('.board')
+console.log(playerBoard)
 
 for(let i=0; i<=80; i++) {
   const newDiv = document.createElement('div')
@@ -59,6 +61,8 @@ for(let i=0; i<=80; i++) {
 
 const tile = document.querySelectorAll('.tile')
 
+console.log(tile)
+
 const numberSelectEl = document.querySelector('.number-select')
 
 const numBtnEls = document.querySelectorAll('.select')
@@ -67,36 +71,46 @@ const numBtnEls = document.querySelectorAll('.select')
 
 playerBoard.addEventListener('click', function(evt){
   let choice = evt.target.id.replace('sq', '')
+  evt.target.style.backgroundColor = 'yellow'
   
-  numberSelectEl.addEventListener('click', storeValue) 
-  function storeValue(inp){
-    let input = inp.target.value
-    evt.target.textContent = input
-    numberSelectEl.removeEventListener('click', storeValue)
-  }
+  numberSelectEl.addEventListener('click', (e) => storeValue(e, choice)) 
   
-  evalNum()
+  // evalNum()
+  console.log(blankBoard)
 })
 
 /*-------------------------------- Functions --------------------------------*/
-
+function storeValue(evt, choice){
+  console.log(choice, 'choice')
+  let input = evt.target.value
+  blankBoard[choice] = input
+  // evt.target.textContent = input
+  // evt.target.style.backgroundColor = '#C2DFE3'
+  numberSelectEl.removeEventListener('click', storeValue)
+  console.log(blankBoard)
+  render()
+}
 
 
 function init(){
   blankBoard = [null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null],
+  console.log(blankBoard)
   possibleValues = [1, 2, 3, 4, 5, 6, 7, 8, 9]
   player = 1
   click = 0
   win = null
 
-  
+  render()
 }
 init()
 
 function render(){
-  blankBoard.forEach((num, i) =>{
-   
-    tile[i].style.backgroundColor = '#C2DFE3'
+  blankBoard.forEach((space, i) =>{
+    console.log(space)
+   if(space !== null){
+     console.log(tile[i])
+    tile[i].textContent = space
+   }
   })
 }
 
@@ -131,7 +145,7 @@ function evalNum()  {
 function checkIfNumIsAlreadyInRow() {
   possibleValues.forEach((num, i) => {
     if(rowsArray[i].includes(num)){
-     console.log('dsklfja')
+     
     }
   
   })
