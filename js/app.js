@@ -35,7 +35,7 @@ const columnsArray = [
   [8, 17, 26, 35, 44, 53, 62, 71, 80],
 ]
 
-const allSolutions = boxArray.concat(rowsArray, columnsArray)
+// const allSolutions = boxArray.concat(rowsArray, columnsArray)
 
 
 /*-------------------------------- Variables --------------------------------*/
@@ -46,7 +46,7 @@ let click
 
 /*------------------------ Cached Element References ------------------------*/
 const playerBoard = document.querySelector('.board')
-console.log(playerBoard)
+
 for(let i=0; i<=80; i++) {
   const newDiv = document.createElement('div')
   newDiv.className = 'tile'
@@ -56,29 +56,24 @@ for(let i=0; i<=80; i++) {
 
 
 const tile = document.querySelectorAll('.tile')
-console.log(tile)
 
 const numberSelectEl = document.querySelector('.number-select')
 
 const numBtnEls = document.querySelectorAll('.select')
-console.log(numBtnEls)
 
 /*----------------------------- Event Listeners -----------------------------*/
 
 playerBoard.addEventListener('click', function(evt){
-  let choice = parseInt(evt.target.id.replace('sq', ''))
-  console.log(choice)
+  let choice = evt.target.id.replace('sq', '')
   
-
   numberSelectEl.addEventListener('click', storeValue) 
   function storeValue(inp){
     let input = inp.target.value
-    console.log(input)
     evt.target.textContent = input
     numberSelectEl.removeEventListener('click', storeValue)
   }
-
-  renderArrays()
+  
+  evalNum()
 })
 
 /*-------------------------------- Functions --------------------------------*/
@@ -92,7 +87,7 @@ function init(){
   click = 0
   win = null
 
-  // render()
+  
 }
 init()
 
@@ -100,51 +95,50 @@ function render(){
 
 }
 
-//I want the board within each array to accept 1 integer between 1 and 9, without any of the integers repeating.
 
-function renderArrays(){
-  for (let i = 0; i <= possibleValues.length; i++) {
-    const a = allSolutions[i][0]
-    const b = allSolutions[i][1]
-    const c = allSolutions[i][2]
-    const d = allSolutions[i][3]
-    const e = allSolutions[i][4]
-    const f = allSolutions[i][5]
-    const g = allSolutions[i][6]
-    const h = allSolutions[i][7]
-    const j = allSolutions[i][8]
+// function renderArrays(){
+  // for (let i = 0; i <= possibleValues.length; i++) {
+    // const a = rowsArray[i][0]
+    // const b = rowsArray[i][1]
+    // const c = rowsArray[i][2]
+    // const d = rowsArray[i][3]
+    // const e = rowsArray[i][4]
+    // const f = rowsArray[i][5]
+    // const g = rowsArray[i][6]
+    // const h = rowsArray[i][7]
+    // const j = rowsArray[i][8]
 
-    if(playerBoard[a]+playerBoard[b]+playerBoard[c]+playerBoard[d]+playerBoard[e]+playerBoard[f]+playerBoard[g]+playerBoard[h]+playerBoard[j] === true){
-      console.log('win')
-    }
+    // if(playerBoard[a]+playerBoard[b]+playerBoard[c]+playerBoard[d]+playerBoard[e]+playerBoard[f]+playerBoard[g]+playerBoard[h]+playerBoard[j] === true){
+    //   console.log('win')
+    // }
 
-  }
-}
+  // }
+// }
 
 function evalNum()  {
   checkIfNumIsAlreadyInRow()
   checkIfNumIsAlreadyInColumn()
   checkIfNumIsAlreadyInGrid()
-}
+  //a function that will allow me to see if the row/column/grid already contains a number from 1-9. 
+
+//if 1-9 appears only once in each row/column/grid, return a success message. Else, return an error message
 
 function checkIfNumIsAlreadyInRow() {
+  poop = []
+  possibleValues.forEach((num, i) => {
+    if(rowsArray[i].includes(num)){
+     poop.push(possibleValues[i])
+    }
+    console.log(poop)
+  })
 
 }
 
 function checkIfNumIsAlreadyInColumn() {
 
 }
-
 function checkIfNumIsAlreadyInGrid() {
 
-
-
-    // [null, null, null, null, null, null, null, null, null],
-    // [null, null, null, null, null, null, null, null, null],
-    // [null, null, null, null, null, null, null, null, null],
-    // [null, null, null, null, null, null, null, null, null],
-    // [null, null, null, null, null, null, null, null, null],
-    // [null, null, null, null, null, null, null, null, null],
-    // [null, null, null, null, null, null, null, null, null],
-    // [null, null, null, null, null, null, null, null, null],
-    // [null, null, null, null, null, null, null, null, null]
+render()
+}
+}
