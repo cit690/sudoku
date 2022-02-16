@@ -114,7 +114,6 @@ function render(){
    if(space === null) {
     tile[i].style.backgroundColor = '#e0fbfc'
    } 
-  
   })
 
 }
@@ -126,26 +125,15 @@ function checkAnswer(){
   for(let i = 0; i < answers.length; i++){
     if(answers[i] !== completeBoard[i]){
       boardsMatch = false
-      playerBoard.removeEventListener('click', handClick)
     } 
     resetBtn.removeAttribute('hidden')
   }
+  alert(boardsMatch)
   console.log('boards match', boardsMatch)
   console.log(answers)
   return boardsMatch
 }
-
-
-  // if(answers.forEach() === completeBoard.forEach()){  
-  //     alert ('You did it!')
-  //   } else {
-  //     alert('try again!')
-  //   }
-
-    
-
-  // if(answers === completeBoard){
-  
+ 
 
 
     // [2, 3, null, 4, 1, 5, null, 6, 8, 
