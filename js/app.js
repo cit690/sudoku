@@ -52,7 +52,6 @@ function handClick(evt){
 
 submitAnswer.addEventListener('click', function(e){
   for (i = 0; i < launchBoard.length; i++){
-
     answers.push(launchBoard[i])
   }
   
@@ -64,15 +63,16 @@ submitAnswer.addEventListener('click', function(e){
 
 function init(){
   launchBoard = 
-    [2, 3, null, 4, 1, 5, null, 6, 8, 
-    null, 8, null, 2, 3, 6, 5, 1, 9, 
-    1, 6, null, 9, 8, 7, 2, 3, 4, 
-    3, 1, 7, null, 9, 4, null, 2, 5, 
-    4, 5, 8, 1, 2, null, 6, 9, 7, 
-    9, 2, 6, null, 5, 8, 3, null, 1, 
-    null, null, null, 5, null, null, 1, null, 2, 
-    null, null, null, 8, 4, 2, 9, null, 3, 
-    5, 9, 2, 3, 7, 1, 4, 8, 6],
+    [2, 3, 9, 4, null, 5, 7, 6, 8,
+    7, 8, 4, 2, 3, 6, 5, 1, 9, 
+    1, 6, 5, 9, 8, 7, 2, 3, 4, 
+    3, 1, 7, 6, 9, 4, 8, 2, 5, 
+    4, 5, 8, null, 2, 3, 6, 9, 7, 
+    9, 2, 6, 7, 5, 8, 3, 4, 1, 
+    8, 4, 3, 5, 6, 9, 1, 7, 2, 
+    6, 7, 1, 8, 4, 2, 9, 5, 3, 
+    5, 9, 2, 3, 7, 1, 4, null, 6],
+ 
 
   completeBoard = 
     [2, 3, 9, 4, 1, 5, 7, 6, 8,
@@ -105,18 +105,40 @@ function render(){
 
 function checkAnswer(){
   //guess = user inputted launchboard
-  //makes sure submitted launchboard(guess) = complete
+  //makes sure submitted launchboard = complete
   //if guess === completeboard{display winning message} else {tell user try again}
-  answers.forEach((i) => {
-    console.log(i)
-  })
+  // answers.forEach((i) => {
+  //   console.log(i)
+  // })
+  let boardsMatch = true
+  for(let i = 0; i < answers.length; i++){
+    if(answers[i] !== completeBoard[i]){
+      boardsMatch = false
+    }
+  console.log('boards match', boardsMatch)
+  console.log(answers)
+  return boardsMatch
+
+
+  // if(answers.forEach() === completeBoard.forEach()){  
+  //     alert ('You did it!')
+  //   } else {
+  //     alert('try again!')
+  //   }
+
+    
+  }
 
   // if(answers === completeBoard){
-  //   alert ('You did it!')
-  // } else {
-  //   alert('try again!')
-  // }
   
-// console.log(answers)
-}
 
+
+    // [2, 3, null, 4, 1, 5, null, 6, 8, 
+    //   null, 8, null, 2, 3, 6, 5, 1, 9, 
+    //   1, 6, null, 9, 8, 7, 2, 3, 4, 
+    //   3, 1, 7, null, 9, 4, null, 2, 5, 
+    //   4, 5, 8, 1, 2, null, 6, 9, 7, 
+    //   9, 2, 6, null, 5, 8, 3, null, 1, 
+    //   null, null, null, 5, null, null, 1, null, 2, 
+    //   null, null, null, 8, 4, 2, 9, null, 3, 
+    //   5, 9, 2, 3, 7, 1, 4, 8, 6],
