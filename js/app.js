@@ -1,12 +1,11 @@
 /*-------------------------------- Constants --------------------------------*/
 
-const answers = []
 
 
 /*-------------------------------- Variables --------------------------------*/
 let launchBoard
 let choice
-
+let answers
 /*------------------------ Cached Element References ------------------------*/
 const playerBoard = document.querySelector('.board')
 
@@ -29,6 +28,8 @@ const eraseBtn = document.querySelector('.erase')
 
 const submitAnswer = document.querySelector('.submit')
 
+const resetBtn = document.querySelector('.restart')
+
 /*----------------------------- Event Listeners -----------------------------*/
 
 playerBoard.addEventListener('click', handClick)
@@ -43,7 +44,7 @@ function handClick(evt){
     launchBoard[choice] = input
     numberSelectEl.removeEventListener('click', storeValue)
 
-    // console.log(launchBoard)
+    console.log(launchBoard)
    
     render()
     
@@ -53,10 +54,13 @@ function handClick(evt){
 submitAnswer.addEventListener('click', function(e){
   for (i = 0; i < launchBoard.length; i++){
     answers.push(launchBoard[i])
-  }
+  } 
   
   checkAnswer()
 })
+
+resetBtn.addEventListener('click', init)
+init()
 /*-------------------------------- Functions --------------------------------*/
 
 
@@ -85,6 +89,10 @@ function init(){
      6, 7, 1, 8, 4, 2, 9, 5, 3, 
      5, 9, 2, 3, 7, 1, 4, 8, 6],
 
+answers = []
+
+resetBtn.setAttribute('hidden', true)
+
 
   render()
 }
@@ -111,13 +119,18 @@ function checkAnswer(){
   //   console.log(i)
   // })
   let boardsMatch = true
+  
   for(let i = 0; i < answers.length; i++){
     if(answers[i] !== completeBoard[i]){
       boardsMatch = false
-    }
+    } 
+  
+    resetBtn.removeAttribute('hidden')
+  }
   console.log('boards match', boardsMatch)
   console.log(answers)
   return boardsMatch
+}
 
 
   // if(answers.forEach() === completeBoard.forEach()){  
@@ -127,7 +140,6 @@ function checkAnswer(){
   //   }
 
     
-  }
 
   // if(answers === completeBoard){
   
