@@ -123,6 +123,7 @@ function checkAnswer(){
   for(let i = 0; i < answers.length; i++){
     if(answers[i] !== completeBoard[i]){
       boardsMatch = false
+      playerBoard.removeEventListener('click', handClick)
     } 
   
     resetBtn.removeAttribute('hidden')
