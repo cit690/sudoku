@@ -4,8 +4,10 @@
 
 /*-------------------------------- Variables --------------------------------*/
 let launchBoard
-let choice
+let completeBoard
 let answers
+let choice
+
 /*------------------------ Cached Element References ------------------------*/
 const playerBoard = document.querySelector('.board')
 
@@ -18,7 +20,6 @@ for(let i=0; i<=80; i++) {
 
 
 const tile = document.querySelectorAll('.tile')
-
 
 const numberSelectEl = document.querySelector('.number-select')
 
@@ -42,6 +43,7 @@ function handClick(evt){
   function storeValue(e){
     let input = parseInt(e.target.value)
     launchBoard[choice] = input
+    
     numberSelectEl.removeEventListener('click', storeValue)
 
     console.log(launchBoard)
@@ -51,7 +53,7 @@ function handClick(evt){
   }
 }
 
-submitAnswer.addEventListener('click', function(e){
+submitAnswer.addEventListener('click', function(){
   for (i = 0; i < launchBoard.length; i++){
     answers.push(launchBoard[i])
   } 
@@ -59,8 +61,10 @@ submitAnswer.addEventListener('click', function(e){
   checkAnswer()
 })
 
+//when clicked, return all the initial null values in launchBoard back to null
 resetBtn.addEventListener('click', init)
 init()
+
 /*-------------------------------- Functions --------------------------------*/
 
 
@@ -103,21 +107,20 @@ function render(){
    if(space !== null){
     tile[i].textContent = space
     tile[i].style.backgroundColor = '#C2DFE3'
-   } if(space === NaN) {
-    tile[i].style.backgroundColor = '#e0fbfc'
+   } else {
+     tile[i].textContent = ''
    }
+   
+   if(space === null) {
+    tile[i].style.backgroundColor = '#e0fbfc'
+   } 
   
   })
 
 }
 
 function checkAnswer(){
-  //guess = user inputted launchboard
-  //makes sure submitted launchboard = complete
-  //if guess === completeboard{display winning message} else {tell user try again}
-  // answers.forEach((i) => {
-  //   console.log(i)
-  // })
+  
   let boardsMatch = true
   
   for(let i = 0; i < answers.length; i++){
@@ -125,7 +128,6 @@ function checkAnswer(){
       boardsMatch = false
       playerBoard.removeEventListener('click', handClick)
     } 
-  
     resetBtn.removeAttribute('hidden')
   }
   console.log('boards match', boardsMatch)
