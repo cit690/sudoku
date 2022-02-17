@@ -132,7 +132,7 @@ function checkAnswer(){
     resetBtn.removeAttribute('hidden')
 
   }
-  h1Msg.textContent = `${boardsMatch ? 'you did it' : 'try again'}`
+  h1Msg.textContent = `${boardsMatch ? 'you did it' (confetti.start(2000)): 'try again'}`
   console.log('boards match', boardsMatch)
   console.log(answers)
   return boardsMatch
