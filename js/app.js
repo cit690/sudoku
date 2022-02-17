@@ -31,6 +31,8 @@ const submitAnswer = document.querySelector('.submit')
 
 const resetBtn = document.querySelector('.restart')
 
+const h1Msg = document.querySelector('h1')
+
 /*----------------------------- Event Listeners -----------------------------*/
 
 playerBoard.addEventListener('click', handClick)
@@ -71,15 +73,15 @@ init()
 
 function init(){
   launchBoard = 
-    [2, 3, 9, 4, null, 5, 7, 6, 8,
-    7, 8, 4, 2, 3, 6, 5, 1, 9, 
-    1, 6, 5, 9, 8, 7, 2, 3, 4, 
-    3, 1, 7, 6, 9, 4, 8, 2, 5, 
+    [2, 3, 9, 4, null, 5, 7, 6, null,
+    7, null, 4, 2, 3, 6, 5, 1, 9, 
+    1, 6, 5, 9, 8, 7, null, 3, 4, 
+    3, 1, null, 6, 9, 4, 8, null, 5, 
     4, 5, 8, null, 2, 3, 6, 9, 7, 
-    9, 2, 6, 7, 5, 8, 3, 4, 1, 
-    8, 4, 3, 5, 6, 9, 1, 7, 2, 
+    null, 2, 6, 7, 5, 8, 3, 4, 1, 
+    8, 4, 3, 5, 6, null, null, null, 2, 
     6, 7, 1, 8, 4, 2, 9, 5, 3, 
-    5, 9, 2, 3, 7, 1, 4, null, 6],
+    5, 9, null, 3, 7, 1, 4, null, 6],
  
 
   completeBoard = 
@@ -95,8 +97,9 @@ function init(){
 
 answers = []
 
-// resetBtn.setAttribute('hidden', true)
+resetBtn.setAttribute('hidden', true)
 
+h1Msg.textContent = 'PSEUDOKU'
 
   render()
 }
@@ -127,8 +130,9 @@ function checkAnswer(){
       boardsMatch = false
     } 
     resetBtn.removeAttribute('hidden')
+
   }
-  alert(boardsMatch ? 'you did it' : 'try again')
+  h1Msg.textContent = `${boardsMatch ? 'you did it' : 'try again'}`
   console.log('boards match', boardsMatch)
   console.log(answers)
   return boardsMatch
