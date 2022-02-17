@@ -1,7 +1,7 @@
 # Pseudoku
 <img src="https://i.imgur.com/hBll08p.png" alt="game-screenshot">
 
-### <a href="https://cit690.github.io/sudoku/">Play game here!</a>
+### <a href="https://pseudoku.surge.sh/">Play game here!</a>
 
 
 Pseudoku is a simplified, single board brower game based off of the game Sudoku, a logic based, number placement puzzle where the objective is to fill out a 9 x 9 grid so that each column, row, and 3 x 3 subgrid each contain the nubers 1 to 9.
