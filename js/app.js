@@ -33,6 +33,8 @@ const resetBtn = document.querySelector('.restart')
 
 const h1Msg = document.querySelector('h1')
 
+const h4Msg = document.querySelector('h4')
+
 /*----------------------------- Event Listeners -----------------------------*/
 
 playerBoard.addEventListener('click', handClick)
@@ -101,6 +103,8 @@ resetBtn.setAttribute('hidden', true)
 
 h1Msg.textContent = 'PSEUDOKU'
 
+h4Msg.setAttribute('hidden', true)
+
   render()
 }
 init()
@@ -132,20 +136,9 @@ function checkAnswer(){
     resetBtn.removeAttribute('hidden')
 
   }
-  h1Msg.textContent = `${boardsMatch ? 'you did it' (confetti.start(2000)): 'try again'}`
+  h1Msg.textContent = `${boardsMatch ? 'you did it': 'try again'}`
+  h4Msg.textContent= `${boardsMatch ? (confetti.start(2000)): ''}`
   console.log('boards match', boardsMatch)
   console.log(answers)
   return boardsMatch
 }
- 
-
-
-    // [2, 3, null, 4, 1, 5, null, 6, 8, 
-    //   null, 8, null, 2, 3, 6, 5, 1, 9, 
-    //   1, 6, null, 9, 8, 7, 2, 3, 4, 
-    //   3, 1, 7, null, 9, 4, null, 2, 5, 
-    //   4, 5, 8, 1, 2, null, 6, 9, 7, 
-    //   9, 2, 6, null, 5, 8, 3, null, 1, 
-    //   null, null, null, 5, null, null, 1, null, 2, 
-    //   null, null, null, 8, 4, 2, 9, null, 3, 
-    //   5, 9, 2, 3, 7, 1, 4, 8, 6],
