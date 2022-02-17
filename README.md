@@ -37,9 +37,11 @@ Confetti affect made by <a href="https://github.com/ManliestBen">Ben Manley</a>
 ### **Icebox** 🧊
 
 - Code more complex logic that allows the board to check for indiscrepancies
-- Fix bugs 🪲
 - Add more boards with varying difficulties
 - Create a timer and store a "best time" variable
+- Have better defined subgrids
+- Be able to deselect a tile
+
 
 
 

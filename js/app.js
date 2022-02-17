@@ -42,7 +42,7 @@ playerBoard.addEventListener('click', handClick)
 function handClick(evt){
   let choice = parseInt(evt.target.id.replace('sq', ''))
   evt.target.style.backgroundColor = '#F1883B'
- 
+  
   numberSelectEl.addEventListener('click', giveValue) 
   function giveValue(e){
     let input = parseInt(e.target.value)
