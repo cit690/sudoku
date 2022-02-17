@@ -63,7 +63,7 @@ submitAnswer.addEventListener('click', function(){
   checkAnswer()
 })
 
-//when clicked, return all the initial null values in launchBoard back to null
+
 resetBtn.addEventListener('click', init)
 init()
 
