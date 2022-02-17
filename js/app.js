@@ -37,7 +37,7 @@ playerBoard.addEventListener('click', handClick)
 
 function handClick(evt){
   let choice = parseInt(evt.target.id.replace('sq', ''))
-  evt.target.style.backgroundColor = 'yellow'
+  evt.target.style.backgroundColor = '#FFC24B'
  
   numberSelectEl.addEventListener('click', storeValue) 
   function storeValue(e){
@@ -95,7 +95,7 @@ function init(){
 
 answers = []
 
-resetBtn.setAttribute('hidden', true)
+// resetBtn.setAttribute('hidden', true)
 
 
   render()
@@ -106,7 +106,7 @@ function render(){
   launchBoard.forEach((space, i) =>{
    if(space !== null){
     tile[i].textContent = space
-    tile[i].style.backgroundColor = '#C2DFE3'
+    tile[i].style.backgroundColor = '#FFB3AE'
    } else {
      tile[i].textContent = ''
    }
@@ -128,7 +128,7 @@ function checkAnswer(){
     } 
     resetBtn.removeAttribute('hidden')
   }
-  alert(boardsMatch)
+  alert(boardsMatch ? 'you did it' : 'try again')
   console.log('boards match', boardsMatch)
   console.log(answers)
   return boardsMatch
