@@ -6,6 +6,8 @@
 
 Pseudoku is a simplified, single board brower game based off of the game Sudoku, a logic based, number placement puzzle where the objective is to fill out a 9 x 9 grid so that each column, row, and 3 x 3 subgrid each contain the nubers 1 to 9.
 
+I chose this game because it is one of my favorite games and I play it on a nearly daily basis. I also wanted to give myself a challenge.
+
 ----
 ### **Brief History**
 
