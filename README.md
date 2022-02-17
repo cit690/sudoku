@@ -1,7 +1,7 @@
 # Pseudoku
 <img src="https://i.imgur.com/hBll08p.png" alt="game-screenshot">
 
-## <a href="https://cit690.github.io/sudoku/">Play game here!</a>
+### <a href="https://cit690.github.io/sudoku/">Play game here!</a>
 
 
 Pseudoku is a simplified, single board brower game based off of the game Sudoku, a logic based, number placement puzzle where the objective is to fill out a 9 x 9 grid so that each column, row, and 3 x 3 subgrid each contain the nubers 1 to 9.
@@ -15,5 +15,11 @@ In 1997, Wayne Gould of Hong Kong began development of a computer program that w
 
 
 ----------
- 
+### Technology used
+
+![Mac OS](https://img.shields.io/badge/mac%20os-000000?style=for-the-badge&logo=macos&logoColor=F0F0F0)
+![Visual Studio Code](https://img.shields.io/badge/Visual%20Studio%20Code-0078d7.svg?style=for-the-badge&logo=visual-studio-code&logoColor=white)
+![JavaScript](https://img.shields.io/badge/javascript-%23323330.svg?style=for-the-badge&logo=javascript&logoColor=%23F7DF1E)
+![HTML5](https://img.shields.io/badge/html5-%23E34F26.svg?style=for-the-badge&logo=html5&logoColor=white)
+![CSS3](https://img.shields.io/badge/css3-%231572B6.svg?style=for-the-badge&logo=css3&logoColor=white)
 
