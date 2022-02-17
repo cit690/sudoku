@@ -37,7 +37,7 @@ playerBoard.addEventListener('click', handClick)
 
 function handClick(evt){
   let choice = parseInt(evt.target.id.replace('sq', ''))
-  evt.target.style.backgroundColor = '#FFC24B'
+  evt.target.style.backgroundColor = '#F1883B'
  
   numberSelectEl.addEventListener('click', storeValue) 
   function storeValue(e){
@@ -106,13 +106,13 @@ function render(){
   launchBoard.forEach((space, i) =>{
    if(space !== null){
     tile[i].textContent = space
-    tile[i].style.backgroundColor = '#FFB3AE'
+    tile[i].style.backgroundColor = '#C9E3AC'
    } else {
      tile[i].textContent = ''
    }
    
    if(space === null) {
-    tile[i].style.backgroundColor = '#e0fbfc'
+    tile[i].style.backgroundColor = '#EAEFBD'
    } 
   })
 

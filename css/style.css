@@ -18,20 +18,22 @@ html {
 }
 
 body {
+  font-family: 'Long Cang', cursive;
   display: flex;
   align-items: center;
   justify-content: center;
-  color: #0E606B;
-  background-color: #fff4f1;
-  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
-        Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
+  color: #2B1A0F;
+  background-color: #EAEFBD;
+  /* font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
+        Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif; */
   margin: 0;
 
 }
 
 h1{
   text-align: center;
-  margin: 50px 0 35px 0;
+  font-size: 50px;
+  margin: 50px 0 25px 0;
 }
 
 .main{
@@ -47,14 +49,14 @@ h1{
   display: grid;
   grid-template-columns: 50px 50px 50px 50px 50px 50px 50px 50px 50px;
   grid-template-rows: 50px 50px 50px 50px 50px 50px 50px 50px 50px;
-  border: 1.5px solid #253237;
+  border: 1.5px solid #2B1A0F;
 }
 
 .tile {
-  color: #253237;
-  font-size: 25px;
+  color: #2B1A0F;
+  font-size: 30px;
   text-align: center;
-  border: 1px solid #1697A6;
+  border: 1px solid #7A6263;
 }
  
 .number-select {
@@ -69,7 +71,7 @@ h1{
   width: 45px;
   height: 45px;
   font-size: 20px;
-  background-color: #c2dfe3;
+  background-color: #90BE6D;
   border: 1px solid #5c6b73;
   margin: 2px 2px;
 }
@@ -78,15 +80,17 @@ h1{
   font-size: 20px;
   width: 60px;
   height: 30px;
+  background-color: #90BE6D;
 }
 
 .submit{
   margin-right: auto;
   font-size: 18px;
-  width: 110px;
+  width: 120px;
   height: 50px;
   padding: 0;
   margin: 20px 0;
+  background-color: #90BE6D;
 }
 
 .restart{
@@ -97,4 +101,5 @@ h1{
   height: 50px;
   padding: 0;
   margin: 0;
+  background-color: #90BE6D;
 }
