@@ -43,17 +43,25 @@ function handClick(evt){
   let choice = parseInt(evt.target.id.replace('sq', ''))
   evt.target.style.backgroundColor = '#F1883B'
  
-  numberSelectEl.addEventListener('click', storeValue) 
-  function storeValue(e){
+  numberSelectEl.addEventListener('click', giveValue) 
+  function giveValue(e){
     let input = parseInt(e.target.value)
     launchBoard[choice] = input
     
-    numberSelectEl.removeEventListener('click', storeValue)
-
-    console.log(launchBoard)
-   
+    numberSelectEl.removeEventListener('click', giveValue)
+    eraseBtn.removeEventListener('click', clearVal)
     render()
+  }
+
+  eraseBtn.addEventListener('click', clearVal)
+  function clearVal(er){
+    let clear = er.target.value
+    launchBoard[choice] = clear
+
+    numberSelectEl.removeEventListener('click', giveValue)
+    eraseBtn.removeEventListener('click', clearVal)
     
+    render()
   }
 }
 
@@ -101,9 +109,12 @@ answers = []
 
 resetBtn.setAttribute('hidden', true)
 
+
 h1Msg.textContent = 'PSEUDOKU'
 
 h4Msg.setAttribute('hidden', true)
+
+playerBoard.addEventListener('click', handClick)
 
   render()
 }
@@ -121,6 +132,10 @@ function render(){
    if(space === null) {
     tile[i].style.backgroundColor = '#EAEFBD'
    } 
+
+   if(space === ''){
+    tile[i].style.backgroundColor = '#EAEFBD'
+   }
   })
 
 }
@@ -134,11 +149,11 @@ function checkAnswer(){
       boardsMatch = false
     } 
     resetBtn.removeAttribute('hidden')
-
+    playerBoard.removeEventListener('click', handClick)
+    
   }
-  h1Msg.textContent = `${boardsMatch ? 'you did it': 'try again'}`
+  h1Msg.textContent = `${boardsMatch ? 'You Did It!': 'Try Again'}`
   h4Msg.textContent= `${boardsMatch ? (confetti.start(2000)): ''}`
-  console.log('boards match', boardsMatch)
-  console.log(answers)
+
   return boardsMatch
 }
